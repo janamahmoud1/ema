@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color:black ;
+  }
+  .hidden {
+    display: none;
+  }
+  .hid h1{
+    color: white;
+  }
+  .hid button{
+    border: white solid ;
+  }
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px ;
+    cursor: pointer;
+  }
+  .button:hover {
+    background-color: white;
+    color:rgb(155, 118, 69) ;
+  }
+  .log{
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+  }
+  .log-d{
+    border-radius: 20px;
+    border-color: white;
+    border-style: solid;
+    width: 500px;
+    height: 200px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    background-color:black ;
+    box-shadow: 5px 5px 10px white; /* 5px right, 5px down, 10px blur, 50% black */ 
+    color: white;
+    width: 30%;
+      margin: 0 auto; /* Automatically set margins */
+      text-align: center;
+  }
+  .log-d input{
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    border-radius: 30px;
+    border-color: transparent;
+    
+  }
+  .hid-2{
+    margin: 50px;
+  }
+  </style>
+</head>
+<body>
+  <!-- Login Page -->
+  <div id="login-page" class="">
+    <div class="log-d">
+      <h1>Enter Password</h1>
+    <input type="password" id="password" placeholder="Enter password">
+    <button class="button" onclick="checkPassword()">Submit</button>
+    </div>
+  </div>
+
+  <!-- Message Page -->
+  <div id="message-page" class="hidden hid">
+    <h1>Happy Birthday Babe 🎉</h1>
+    <button class="button" onclick="showVideo()">Look Who's Here</button>
+  </div>
+
+  <!-- Video Page -->
+  <div id="video-page" class="hidden hid-2">
+    <video controls width="600">
+      <source src="فيديو واتساب بتاريخ 1446-05-29 في 20.49.55_efe29448.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <script>
+    const correctPassword = "2072005";
+
+    function checkPassword() {
+      const passwordInput = document.getElementById("password").value;
+      if (passwordInput === correctPassword) {
+        document.getElementById("login-page").classList.add("hidden");
+        document.getElementById("message-page").classList.remove("hidden");
+      } else {
+        alert("Wrong password! Please try again.");
+      }
+    }
+
+    function showVideo() {
+      document.getElementById("message-page").classList.add("hidden");
+      document.getElementById("video-page").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
+</html>
+
+
+
